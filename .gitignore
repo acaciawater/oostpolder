@@ -55,6 +55,7 @@ media/
 logs/
 static/
 .settings/
+secrets.py
 
 # Sphinx documentation
 docs/_build/
