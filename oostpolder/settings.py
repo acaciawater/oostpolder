@@ -46,7 +46,6 @@ INSTALLED_APPS = (
     'acacia.data',
     'acacia.data.events',
     'registration',
-    'djcelery',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -135,6 +134,10 @@ LOGGING = {
             'backupCount': 0,
             'formatter': 'default'
         },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
         'django': {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
@@ -164,6 +167,16 @@ LOGGING = {
             'handlers': ['file',],
             'level': 'DEBUG',
             'propagate': True,
+        },
+        'iom.management': {
+            'handlers': ['console',],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'oostpolder.management': {
+            'handlers': ['console',],
+            'level': 'DEBUG',
+            'propagate': False,
         },
     },
 }
